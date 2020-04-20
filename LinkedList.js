@@ -4,17 +4,6 @@ class Node {
         this.next = null
     }
 }
-// //creating first node//
-// const head = new Node(1)
-// console.log('Chain: ', head)
-
-// //creating and  adding second node//
-// head.next = new Node(2)
-// console.log('Chain', head)
-
-// //creating and adding third node//
-// head.next.next = new Node(3)
-// console.log('Chain', head)
 
 const head = Symbol('head')
 
@@ -50,8 +39,38 @@ class LinkedList {
             console.log('LinkedList: ', this[head])
         }
     }
+
+    //a function to retrive data from list//
+    get(index){
+        //make sure that index is non-negative//
+        if (index  > -1) {
+            //pointer to go through the list//
+            let current = this[head]
+            //to keep track of index//
+            let i = 0
+            //check if the point is on empty or undefined index//
+            while((current !== null) && (i < index) ){
+                current = current.next
+                i = i+1
+            }
+            //return if the index is non-null//
+            return console.log(current.value)
+        }
+        else{
+            //throw error for undefined index
+            console.log('LinkedList: ', this[head])
+            return undefined
+        }
+    }
 }
 
 myList = new LinkedList()
 myList.add(1)
 myList.add(2)
+myList.add(3)
+myList.add(4)
+myList.add(5)
+//-----------//
+myList.get(1)
+
+
