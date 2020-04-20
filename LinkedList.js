@@ -108,17 +108,24 @@ class LinkedList {
         //if node is not found, throw error for invalid index//
         throw new RangeError(`Index ${index} doesn't exist on list`)
     }
+
+    //a function to get list//
+    getList(){
+        console.log(this[head])
+    }
 }
 
 myList = new LinkedList()
-myList.add(1)
-myList.add(2)
-myList.add(3)
-myList.add(4)
-myList.add(5)
+myList.add(12)
+myList.add(234)
+myList.add(343)
+myList.add(475)
+myList.add(554)
 //-----------//
 myList.get(1)
 //-----------//
 myList.remove(3)
+//-----------//
+myList.getList()
 
 
