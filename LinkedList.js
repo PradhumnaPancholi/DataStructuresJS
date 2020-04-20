@@ -5,13 +5,11 @@ class Node {
     }
 }
 
-const head = Symbol('head')
-
 class LinkedList {
 
     //starts as empty || null
     constructor(){
-        this[head] = null
+        this.head = null
     }
 
     //function to add a node into LinkedList//
@@ -21,14 +19,14 @@ class LinkedList {
         let newNode = new Node(data)
 
         //check if the list is empty//  
-        if(this[head] === null){
+        if(this.head === null){
             //if yes, add new node as first element//
-            this[head] = newNode
+            this.head = newNode
             //print the LinkedList//
             console.log(`Added ${data} into the list`)
         }else{
             //start looking for empty/last node//
-            let current  = this[head]
+            let current  = this.head
             //follow the 'next' trail //
             while(current.next !== null){
                 current = current.next
@@ -45,7 +43,7 @@ class LinkedList {
         //make sure that index is non-negative//
         if (index  > -1) {
             //pointer to go through the list//
-            let current = this[head]
+            let current = this.head
             //to keep track of index//
             let i = 0
             //iterate through list until to get till index or end(undefined)//
@@ -58,7 +56,7 @@ class LinkedList {
         }
         else{
             //return undefined for no existing index
-            console.log('LinkedList: ', this[head])
+            console.log('LinkedList: ', this.head)
             return undefined
         }
     }
@@ -67,15 +65,15 @@ class LinkedList {
     //take care od special cases: [1]. Empty list, [2]. 0 as in input index, [3]. Index out of range
 
         //operation can't be performed if idex is negave or the list is empty//
-        if((this[head] === null) || (index < 0)){
+        if((this.head === null) || (index < 0)){
             throw new RangeError(`The ${index} is out of range`)
         }
         //operation to remove the first node(head) if there is only one node present in array//
         if(index === 0) {
             //store data in temp variable (to show in response)
-            let data = this[head].value
+            let data = this.head.value
             // replace the data in 'head' with 'next'(empty)//
-            this[head] = this[head].next
+            this.head = this.head.next
             //respond with a msg//
             console.info(`Deleted ${data} at index ${index}`)
             return
@@ -83,7 +81,7 @@ class LinkedList {
     //operation to perform find and remove node from rest of list//
         
         //pointer to go through list//
-        let current = this[head]
+        let current = this.head
         //to keep track of node before current in loop (to remove data from 'next)
         let previous = null
         //to keep track of index//
@@ -96,7 +94,7 @@ class LinkedList {
             current = current.next
             i = i+1
         }
-        //if node is found, remove data//
+        //if node at is found, remove data//
         if(current !== null){
             //skip over node to remove 
             //i.e remove the value of found index from 'previous.next' and attach the value to index after 'current'(the one we are removing)//
@@ -111,16 +109,17 @@ class LinkedList {
 
     //a function to get list//
     getList(){
-        console.log(this[head])
+        console.log(this.head)
     }
+    // attempts for extension:- insert at index, insert first, insert last, clear//
 }
 
 myList = new LinkedList()
-myList.add(12)
-myList.add(234)
-myList.add(343)
-myList.add(475)
-myList.add(554)
+myList.add('red')
+myList.add('indigo')
+myList.add('violet')
+myList.add('cyan')
+myList.add('magenta')
 //-----------//
 myList.get(1)
 //-----------//
