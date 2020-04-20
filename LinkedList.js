@@ -52,12 +52,12 @@ class LinkedList {
                 i = i+1
             }
             //return if the index of non-null in not undefined ie. The value at given index unless it's out of range(undefined))//
-            return current !== null ? console.log(`Value of index ${index}: ${current.value}`) : undefined
+            return current !== null ? console.log(`Value of index ${index}: ${current.value}`) : console.log(`The index ${index} is out of range`)
         }
         else{
-            //return undefined for no existing index
-            console.log('LinkedList: ', this.head)
-            return undefined
+            //return with msg for no existing index
+            console.log(`The index ${index} is out of range`)
+            return 
         }
     }
     //function to remove a node//

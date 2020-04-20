@@ -28,13 +28,33 @@ class DoublyLinkedList{
         //if node is not empty, add at tail
         else{
             // link the current tail and new tail
-            this.tail.next = newNode 
-            newNode.previous = this.tail 
+            this.tail.next = newNode //sets value of newNode in 'next'//
+            newNode.previous = this.tail //sets value of newNode.previous && head.next//
             console.log(`Added ${data} into the list`)
         }
         //reassign 'tail' to be the new node//
         this.tail = newNode //if there is only one item in the list, both 'head' & 'tail' will show same 'node'
         this.length++
+    }
+
+    get(index){
+        //verify if index in non-negative//
+        if(index > -1){
+            //pointer to go through list//
+            let current = this.head
+            //to keep track of index/interations//
+            let i = 0
+
+            //iterate through loop until end or undefined//
+            while((current !== null) && (i < index)){
+                current = current.next
+                i++
+            }
+            return current !== null ? console.log(`Value of index ${index}: ${current.value}`) : console.log(`The index ${index} is out of range`)
+        }
+        else{
+            console.log(`The index ${index} is out of range`)
+        }
     }
 
     getList(){
@@ -46,4 +66,5 @@ myDoublyList = new DoublyLinkedList()
 myDoublyList.add('red')
 myDoublyList.add('indigo')
 myDoublyList.add('cyan')
+myDoublyList.get(10)
 myDoublyList.getList()
