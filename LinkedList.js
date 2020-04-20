@@ -22,7 +22,7 @@ class LinkedList {
         if(this.head === null){
             //if yes, add new node as first element//
             this.head = newNode
-            //print the LinkedList//
+            //respond with msg//
             console.log(`Added ${data} into the list`)
         }else{
             //start looking for empty/last node//
