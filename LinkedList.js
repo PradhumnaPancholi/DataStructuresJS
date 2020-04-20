@@ -5,20 +5,20 @@ class Node {
     }
 }
 //creating first node//
-const node1 = new Node(1)
-console.log('Node1 : ', node1)
+const head = new Node(1)
+console.log('Chain: ', head)
 
-//creating second node//
-const node2 = new Node(2)
-console.log('Node2: ', node2)
+//creating and  adding second node//
+head.next = new Node(2)
+console.log('Chain', head)
 
 //creating third node//
-const node3 = new Node(3)
-console.log('Node2: ', node3)
+head.next.next = new Node(3)
+console.log('Chain', head)
 
-//adding value of 'next' in nodes//
-node1.next = node2
-node2.next = node3
+//adding value of 'next' in nodes to ck//
+// head.next = node2
+// node2.next = node3
 
 //printing the chain of nodes//
-console.log(node1)
+// console.log(head)
