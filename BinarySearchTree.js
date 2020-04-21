@@ -54,4 +54,17 @@ class BinarySearchTree{
         console.log(`Min value: ${current.value}`)
         return current.value
     }
+
+    max(){
+        //pointer to traverse through, starts from root
+        let current = this.root
+        //just keep looking on right until last leaf node//
+        while(current.right){
+            current = current.right
+        }
+        console.log(`Min value: ${current.value}`)
+        return current.value
+    }
+
+    
 }
