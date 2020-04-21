@@ -64,7 +64,7 @@ class BinarySearchTree{
         while(current.right){
             current = current.right
         }
-        console.log(`Min value: ${current.value}`)
+        console.log(`Max value: ${current.value}`)
         return current.value
     }
 
@@ -154,3 +154,8 @@ myBST.insert(9)
 myBST.insert(16)
 
 console.log(myBST)
+
+myBST.max()
+myBST.min()
+myBST.contains(57)
+myBST.contains(40)
