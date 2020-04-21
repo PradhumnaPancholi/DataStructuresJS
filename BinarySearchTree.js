@@ -66,5 +66,25 @@ class BinarySearchTree{
         return current.value
     }
 
-    
+    contains(value){
+        //pointer to traverse through and keep track 
+        let currentNode  = this.root
+        
+        while(currentNode){
+            if(currentNode.value === value){
+                console.log('Match found!!!')
+                return true
+            }
+            if(currentNode.value > value){
+                currentNode = currentNode.left
+            }
+            else{
+                currentNode = currentNode.right
+            }
+        }
+
+        console.log('No Match Found!!!')
+        return false
+    }
+
 }
