@@ -12,5 +12,35 @@ class BinarySearchTree{
         this.count = 0
     }
 
-    
+    insert(value){
+        //create new node with given value//
+        let newNode = new Node(value)
+
+        //implement a recursive search algorithm to traverse through and set the new node//
+        const searchTree = node => {
+            // if newNode is smaller than root, go left
+            if(value < node.value){
+                //if no left node is available, append there//
+                if(!node.left){
+                    node.left = newNode
+                }//if there is a left child, look again//
+                else{
+                    searchTree(node.left)
+                }
+            }
+            // if newNode is greater than root, go right
+            if(value > node.value){
+                //if not right node is available. append there//
+                if(!node.right){
+                    node.right = newNode
+                }// if there is a right child, look again//
+                else{
+                    searchTree(node.right)
+                }
+            }
+        }
+
+        // call search tree method on root node//
+        searchTree(this.root)
+    }
 }
