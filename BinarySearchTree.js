@@ -43,4 +43,15 @@ class BinarySearchTree{
         // call search tree method on root node//
         searchTree(this.root)
     }
+
+    min(){
+        //pointer to traverse through, starts from root
+        let current = this.root
+        //just keep looking on left until last leaf node//
+        while(current.left){
+            current = current.left
+        }
+        console.log(`Min value: ${current.value}`)
+        return current.value
+    }
 }
