@@ -57,6 +57,29 @@ class DoublyLinkedList{
         }
     }
 
+    remove(index){
+        //if list is empty or index is non positive//
+        if(this.head === null && index < 0){
+            throw new RangeError(`This ${index} doesn't fall under available range`)
+        }
+        //if index is 0 -> removing first node//
+        if(index === 0){
+            //store data from current head//
+            let temp = this.head.value
+            //replace the value of 'head' with next(null) //
+            this.head = this.head.next
+
+            //if there is only one item, reset 'tail'
+            if(this.head === null){
+                this.tail === null
+            }
+            else{
+                this.head.previous === null
+            }
+        console.log(`Succesfully deleted ${temp} at index ${index}`)
+        }
+    }
+
     getList(){
         console.log(this)
     }
