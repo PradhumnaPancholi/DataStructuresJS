@@ -104,7 +104,8 @@ class BinarySearchTree{
             if(node.right) traverse(node.right)
         }
 
-        console.log(result)
+        traverse(this.root)
+        console.log(`DFS In Order: ${result}`)
     }
 
     //pre-order -> root, left, right//
@@ -120,11 +121,12 @@ class BinarySearchTree{
             if(node.right) traverse(node.right)
         }
 
-        console.log(result)
+        traverse(this.root)
+        console.log(`DFS Pre Order: ${result}`)
     }
 
     //post-order -> left, right, root//
-    dfsPreOrder(){
+    dfsPostOrder(){
         let result = []
 
         const traverse = node => {
@@ -136,7 +138,8 @@ class BinarySearchTree{
             result.push(node.value)
         }
 
-        console.log(result)
+        traverse(this.root)
+        console.log(`DFS Post Order: ${result}`)
     }
 
     // breadth first search//
@@ -159,3 +162,7 @@ myBST.max()
 myBST.min()
 myBST.contains(57)
 myBST.contains(40)
+
+myBST.dfsInOrder()
+myBST.dfsPreOrder()
+myBST.dfsPostOrder()
