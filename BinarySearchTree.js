@@ -9,10 +9,12 @@ class Node{
 class BinarySearchTree{
     constructor(value){
         this.root = new Node(value)
-        this.count = 0
+        this.count = 1
     }
 
     insert(value){
+        //increament the count//
+        this.count++
         //create new node with given value//
         let newNode = new Node(value)
 
@@ -101,6 +103,8 @@ class BinarySearchTree{
             //if right node exists, go right again//
             if(node.right) traverse(node.right)
         }
+
+        console.log(result)
     }
 
     //pre-order -> root, left, right//
@@ -115,6 +119,8 @@ class BinarySearchTree{
             //if right node exists, go right again//
             if(node.right) traverse(node.right)
         }
+
+        console.log(result)
     }
 
     //post-order -> left, right, root//
@@ -129,6 +135,22 @@ class BinarySearchTree{
             //capture root node value//
             result.push(node.value)
         }
+
+        console.log(result)
     }
 
+    // breadth first search//
+
 }
+
+// Implementation//
+let myBST = new BinarySearchTree(19)
+
+myBST.insert(40)
+myBST.insert(28)
+myBST.insert(44)
+myBST.insert(15)
+myBST.insert(9)
+myBST.insert(16)
+
+console.log(myBST)
